@@ -1,0 +1,25 @@
+stories:
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: express_feeling
+  steps:
+  - intent: express_feeling
+  - action: utter_express_feeling
+
+- story: farewell
+  steps:
+  - intent: farewell
+  - action: utter_farewell
+
+- story: request
+  steps:
+  - intent: request
+  - action: utter_request
+
+- story: casual_conversation
+  steps:
+  - intent: casual_conversation
+  - action: utter_casual_conversation

@@ -1,0 +1,54 @@
+version: "3.1"
+
+intents:
+  - greet
+  - express_feeling
+  - farewell
+  - request
+  - casual_conversation
+
+responses:
+  utter_greet:
+    - text: "Hey there! How's your day going?"
+    - text: "Hello! What can I help you with today?"
+    - text: "Hi! How are you doing?"
+    - text: "Hey! What's up?"
+  
+  utter_express_feeling:
+    - text: "It's great to hear that you're excited about your upcoming trip! Do you need any help with your plans?"
+    - text: "I'm glad you're feeling great! What's been going on?"
+    - text: "I'm sorry to hear you're feeling down. Is there anything I can do to cheer you up?"
+    - text: "Feeling happy is the best! Anything special happen?"
+    - text: "Stress can be tough. Want to talk about it?"
+
+  utter_farewell:
+    - text: "Take care and have a great day!"
+    - text: "Goodbye for now! Catch you later!"
+    - text: "See you around! Stay safe!"
+    - text: "Bye! It was nice chatting with you!"
+    - text: "Have a wonderful day! Talk to you soon!"
+
+  utter_request:
+    - text: "Sure, I can help with that! What do you need assistance with?"
+    - text: "Absolutely! What do you need help with?"
+    - text: "Of course! Just let me know what you need."
+    - text: "I'm here to help! What can I do for you?"
+
+  utter_casual_conversation:
+    - text: "That's an interesting question! Let's chat."
+    - text: "Sure! Let's talk about that."
+    - text: "I'd love to hear more about your interests!"
+    - text: "That's a great topic! What's on your mind?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - action_default_fallback
+
+policies:
+  - name: FallbackPolicy
+    nlu_threshold: 0.4
+    core_threshold: 0.3
+    fallback_action_name: "action_default_fallback"
